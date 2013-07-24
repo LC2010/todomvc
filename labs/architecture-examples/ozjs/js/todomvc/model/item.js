@@ -5,7 +5,7 @@ define([
 ], function (_, nerv) {
     'use strict';
 
-    var uuid = 0;
+    var uuid = +new Date();
 
     return nerv.model({
 

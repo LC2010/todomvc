@@ -61,7 +61,7 @@ define([
             view.list.updateItem(target.data());
             app.updateStatus();
         } else {
-            app.updateList(list.data());
+            app.updateListGraceful(list.data());
         }
         localStorage.todomvc = JSON.stringify(list.data());
     });
@@ -82,21 +82,28 @@ define([
 
         init: function (opt) {
 
-            url.listen();
-
             view.init(opt);
 
-            var data = JSON.parse(localStorage.todomvc || '[]');
-            list.set(function () {
-                data.forEach(function (itemData) {
-                    list.addItem(itemData);
+            view.confirm('Restore last data ?', function () {
+                var data = JSON.parse(localStorage.todomvc || '[]');
+                list.set(function () {
+                    data.forEach(function (itemData) {
+                        list.addItem(itemData);
+                    });
                 });
-            });
+            }, { title: 'Prompt' });
+
+            url.listen();
 
         },
 
         updateList: function (data) {
             view.list.update(data);
+            this.updateStatus();
+        },
+
+        updateListGraceful: function (data) {
+            view.list.updateGraceful(data);
             this.updateStatus();
         },
 

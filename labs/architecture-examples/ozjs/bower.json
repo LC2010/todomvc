@@ -10,7 +10,6 @@
         "urlkit": "~1.0.2",
         "soviet": "~1.0.0",
         "moui": "~2.0.3",
-        "momo": "~1.0.1",
         "todomvc-common": "~0.1.7"
     },
     "ignore": []

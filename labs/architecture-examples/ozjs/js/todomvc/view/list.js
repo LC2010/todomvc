@@ -22,6 +22,11 @@ define([
         },
 
         update: function (data) {
+            todoList[0].innerHTML = '';
+            this.updateGraceful(data);
+        },
+
+        updateGraceful: function (data) {
             var lib = _.index(data, 'iid');
             todoList.find('li').forEach(function (itemNode) {
                 itemNode = $(itemNode);

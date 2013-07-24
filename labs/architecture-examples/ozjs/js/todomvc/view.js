@@ -7,14 +7,13 @@ define([
     'mo/key',
     'eventmaster',
     'soviet',
-    'momo/tap',
     './view/picker',
     './view/actionview',
     './view/alert',
     './view/confirm',
     './view/list',
     'mo/domready'
-], function ($, _, tpl, mainloop, key, event, soviet, momoTap,
+], function ($, _, tpl, mainloop, key, event, soviet,
     picker, actionView, alert, confirm,
     listView) {
 	'use strict';
@@ -107,14 +106,12 @@ define([
 
             listView.init();
 
-            momoTap(document);
-        
             this.delegate = soviet(doc, {
                 matchesSelector: true,
                 preventDefault: true,
                 autoOverride: true
             }).on('click', clickEvents)
-                .on('doubletap', doubleEvents)
+                .on('dblclick', doubleEvents)
                 //.on('picker:change', pickerEvents)
                 .on('keypress', pressEvents);
 
