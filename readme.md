@@ -64,7 +64,6 @@ We also have a number of in-progress applications in Labs:
 - [PlastronJS](https://github.com/rhysbrettbowen/PlastronJS)
 - [Dijon](https://github.com/creynders/dijon-framework)
 - [rAppid.js](http://www.rappidjs.com)
-- [o_O](http://weepy.github.com/o_O)
 - [Thorax](http://walmartlabs.github.com/thorax/)
 - [KnockoutJS](http://knockoutjs.com) + [ClassBindingProvider](https://github.com/rniemeyer/knockout-classBindingProvider) (using Ryan Niemeyer's Class Binding Provider)
 - [KnockoutJS](http://knockoutjs.com) + [RequireJS](http://requirejs.org) (using AMD)
@@ -131,7 +130,7 @@ It is meant to be used as a gateway to reviewing how a basic application using a
 
 ## Project Status
 
-TodoMVC 1.0 includes re-writes of almost all applications, ensuring they follow a consistent set of specifications and are using the latest versions of all libraries and frameworks in use. We've also addressed framework author concerns about routing by adding this to many of the more mainstream applications in the project.
+TodoMVC 1.x includes re-writes of almost all applications, ensuring they follow a consistent set of specifications and are using the latest versions of all libraries and frameworks in use. We've also addressed framework author concerns about routing by adding this to many of the more mainstream applications in the project.
 
 
 ## Getting Involved
