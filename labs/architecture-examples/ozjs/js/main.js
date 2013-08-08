@@ -32,4 +32,6 @@ require([
 
     app.init();
 
+    app.load(); //view.confirm('Restore last data ?', app.load, { title: 'Prompt' });
+
 });

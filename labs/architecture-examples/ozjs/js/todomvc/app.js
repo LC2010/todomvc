@@ -47,7 +47,9 @@ define([
     });
 
     actions.on('todo:switch', function (href) {
-        url.nav(0, urlkit.parse(href)[1] || false);
+        url.nav(0, urlkit.parse(href)[1] || false, {
+            route: false
+        });
     });
 
     list.observer.on('change', function (changes) {
@@ -81,20 +83,17 @@ define([
     var app = {
 
         init: function (opt) {
-
             view.init(opt);
-
-            view.confirm('Restore last data ?', function () {
-                var data = JSON.parse(localStorage.todomvc || '[]');
-                list.set(function () {
-                    data.forEach(function (itemData) {
-                        list.addItem(itemData);
-                    });
-                });
-            }, { title: 'Prompt' });
-
             url.listen();
+        },
 
+        load: function () {
+            var data = JSON.parse(localStorage.todomvc || '[]');
+            list.set(function () {
+                data.forEach(function (itemData) {
+                    list.addItem(itemData);
+                });
+            });
         },
 
         updateList: function (data) {
@@ -125,7 +124,10 @@ define([
                 completed: list.completedData().length,
                 remaining: list.remainingData().length
             });
-        }
+        },
+
+        alert: view.alert,
+        confirm: view.confirm
     
     };
 

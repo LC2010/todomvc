@@ -105,6 +105,7 @@ define([
             statusBox = $('#footer');
 
             listView.init();
+            $('#new-todo').removeAttr('disabled').trigger('focus');
 
             this.delegate = soviet(doc, {
                 matchesSelector: true,
